@@ -1,0 +1,30 @@
+
+
+-- NOMOR 2 --
+SELECT * FROM districts;
+SELECT * FROM provinces;
+SELECT * FROM regencies;
+SELECT * FROM villages;
+
+-- NOMOR 3 --
+ALTER TABLE provinces RENAME TO provinsi;
+
+-- NOMOR 4 --
+ALTER TABLE regencies RENAME TO kabupaten_kota;
+
+-- NOMOR 5 --
+ALTER TABLE districts RENAME TO kecamatan;
+
+-- NOMOR 6 --
+ALTER TABLE villages RENAME TO desa;
+
+-- NOMOR 7 --
+SELECT d.district_id as id_desa, d.name as desa, p.name as provinsi FROM desa AS d INNER JOIN provinsi AS p ON p.id = 11
+
+-- NOMOR 8 --
+SELECT k.regency_id as id_kecamatan, k.name as kecamatan, p.name as provinsi FROM kecamatan AS k INNER JOIN provinsi AS p ON p.id = 11 AND k.regency_id = 1101
+
+-- NOMOR 9 --
+SELECT kb.id as id_kabupaten_kota, kb.name as kabupaten_kota, p.name as provinsi FROM kabupaten_kota AS kb INNER JOIN provinsi AS p ON p.id = 11 AND kb.id = 1101
+
+
